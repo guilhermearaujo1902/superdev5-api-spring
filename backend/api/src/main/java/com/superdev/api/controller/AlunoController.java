@@ -25,8 +25,7 @@ public class AlunoController {
     // em uma variável e recebendo essa variável no parâmetro indicado
     @GetMapping(value = "/{nome}")
     public String insert(@PathVariable String nome) {
-        service.insert(nome);
-        return nome + " foi inserido com sucesso!";
+        return service.insert(nome);
     }
 
 }
