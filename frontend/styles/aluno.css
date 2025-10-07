@@ -46,3 +46,18 @@ body {
     padding: 8px;
     border-radius: 4px;
 }
+
+.alunoList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.card {
+    width: 100px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #1178a8;
+    color: #ffffff;
+}
