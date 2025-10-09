@@ -57,7 +57,7 @@ body {
 .card {
     width: 100px;
     padding: 16px;
-    border-radius: 8px;
-    background-color: #1178a8;
-    color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #1178a8;
+    color: #1178a8;
 }
