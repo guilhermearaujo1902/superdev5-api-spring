@@ -1,36 +1,18 @@
 package com.superdev.api.model;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+@Builder
 public class Personagem {
 
     private int id;
     private String nome;
     private boolean isVivo;
+    private String universo;
+    private String raca;
+    private String imagem;
 
-    public Personagem() {
-
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public boolean isVivo() {
-        return isVivo;
-    }
-
-    public void setVivo(boolean vivo) {
-        isVivo = vivo;
-    }
 }

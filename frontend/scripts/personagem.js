@@ -1,4 +1,5 @@
 function abrirFormulario() {
+    limparCampos();
     const formulario = document.getElementById('formulario');
     formulario.classList.add('visivel');
 }
@@ -27,10 +28,17 @@ carregarTodos();
 async function salvar() {
 
     const inputNome = document.getElementById('nome').value;
+    const inputUniverso = document.getElementById('universo').value;
+    const inputRaca = document.getElementById('raca').value;
+    const inputVivo = document.getElementById('vivo').checked;
+    const inputImagem = document.getElementById('imagem').value;
 
     const personagem = {
         nome: inputNome,
-        vivo: false
+        universo: inputUniverso,
+        raca: inputRaca,
+        vivo: inputVivo,
+        imagem: inputImagem
     }
     
     const respostaApi = await fetch(`http://localhost:8080/personagem/novo`, {
@@ -43,6 +51,14 @@ async function salvar() {
     console.log(novoPersonagem);
     fecharFormulario();
     carregarTodos();
+}
+
+function limparCampos() {
+    document.getElementById('nome').value = '';
+    document.getElementById('universo').value = '';
+    document.getElementById('raca').value = '';
+    document.getElementById('vivo').checked = true;
+    document.getElementById('imagem').value = '';
 }
 
 
