@@ -18,7 +18,20 @@ async function carregarTodos() {
         divPersonagemList.innerHTML = '';
 
         for (let personagem of personagemList) {
-            divPersonagemList.innerHTML += `<p>${personagem.id} - ${personagem.nome}</p>`;
+            divPersonagemList.innerHTML += `
+                <div class="card">
+                    <img src="${personagem.imagem}" alt="">
+                    <div class="card-content">
+                        <h3>${personagem.nome}</h3>
+                        <p>Código: ${personagem.id}</p>
+                        <p>Universo: ${personagem.universo}</p>
+                    </div>
+                    <div class="card-botoes">
+                        <button class="btn btn-success btn-alterar">Alterar</button>
+                        <button class="btn btn-cancel btn-excluir">Excluir</button>
+                    </div>
+                </div>
+            `;
         }
     }
 }
