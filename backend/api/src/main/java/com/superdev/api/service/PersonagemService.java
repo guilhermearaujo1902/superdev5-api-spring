@@ -16,6 +16,16 @@ public class PersonagemService {
         return this.personagemList;
     }
 
+    public Personagem obterPorId(int id) {
+        Personagem personagemEncontrado = null;
+        for (Personagem personagem : personagemList) {
+            if (personagem.getId() == id) {
+                personagemEncontrado = personagem;
+            }
+        }
+        return personagemEncontrado;
+    }
+
     public Personagem addPersonagem(Personagem personagem) {
         personagem.setId(sequenciaId);
 
@@ -23,6 +33,25 @@ public class PersonagemService {
         sequenciaId++;
 
         return personagem;
+    }
+
+    public boolean delete(int idExcluir) {
+        // Validar se o personagem já existe
+
+        for (Personagem personagem : personagemList) {
+            if (personagem.getId() == idExcluir) {
+                return this.personagemList.remove(personagem);
+            }
+        }
+
+        return false;
+    }
+
+    public Personagem alterarPersonagem(Personagem personagemAtual) {
+        Personagem personagemAntigo = obterPorId(personagemAtual.getId());
+        this.personagemList.remove(personagemAntigo);
+        this.personagemList.add(personagemAtual);
+        return personagemAntigo;
     }
 
 }
